@@ -3,7 +3,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 import './App.css';
 
-
 function Dashboard() {
   const [calendarData, setCalendarData] = useState(null);
   const [weatherData, setWeatherData] = useState(null);
@@ -20,6 +19,10 @@ function Dashboard() {
       .then(data => setWeatherData(data));
   }, []);
 
+
+  if (error) {
+    return <div>Error: {error.message}</div>;
+  } 
   return (
     <div>
       <h1>My Fitness Dashboard</h1>
@@ -36,10 +39,20 @@ function Dashboard() {
       {weatherData && (
         <div>
           <h2>Current UV Index</h2>
-          <p>{weatherData.result.uv}</p>
+          <p>{weatherData.uv}</p>
         </div>
       )}
     </div>
   );
 }
-export default Dashboard;
+
+
+function App() {
+  return (
+    <div className="App">
+      <Dashboard />
+    </div>
+  );
+}
+
+export default App;
