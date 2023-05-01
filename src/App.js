@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './style.css';
+import './index.css';
 import './App.css'; // assuming this is the CSS file for your App component
 
 document.body.style.backgroundColor = 'black';
