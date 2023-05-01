@@ -1,8 +1,3 @@
-import React, { useState, useEffect } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './index.css';
-import './App.css'; // assuming this is the CSS file for your App component
-
 function Dashboard() {
   const [calendarData, setCalendarData] = useState(null);
   const [weatherData, setWeatherData] = useState(null);
@@ -34,15 +29,10 @@ function Dashboard() {
       )}
       {weatherData && (
         <div>
-          <h2>Current Weather</h2>
-          <p>{weatherData.uv}</p>
+          <h2>Current UV Index</h2>
+          <p>{weatherData.result.uv}</p>
         </div>
       )}
     </div>
   );
 }
-
-export default Dashboard;
-
-
- 
