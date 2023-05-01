@@ -35,8 +35,7 @@ function Dashboard() {
       {weatherData && (
         <div>
           <h2>Current Weather</h2>
-          <p>{weatherData.result.temperature}°F</p>
-          <p>{weatherData.result.conditions}</p>
+          <p>{weatherData.result.uv}</p>
         </div>
       )}
     </div>
