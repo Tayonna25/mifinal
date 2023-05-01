@@ -9,12 +9,12 @@ function Dashboard() {
 
   useEffect(() => {
     // Fetch calendar data
-    fetch('/calendars/https://calendar.google.com/calendar/embed?src=botello2%40msu.edu&ctz=America%2FNew_York')
+    fetch('https://www.googleapis.com/calendar/v3/calendars/calendarId/events')
       .then(response => response.json())
       .then(data => setCalendarData(data));
 
     // Fetch weather data
-    fetch('https://api.openuv.io/api/v1/uv?lat=51.5&lng=-0.11&alt=100&dt=&apikey=YOUR_openuv-qletsgrlh4tuops-io')
+    fetch('https://api.openuv.io/api/v1/uv?lat=51.5&lng=-0.11&alt=100&dt=&apikey=YOUR_openuv-apikey')
       .then(response => response.json())
       .then(data => setWeatherData(data));
   }, []);
@@ -27,7 +27,7 @@ function Dashboard() {
           <h2>Upcoming Events</h2>
           <ul>
             {calendarData.items.map(event => (
-              <li key={event.id}>{event.title}</li>
+              <li key={event.id}>{event.summary}</li>
             ))}
           </ul>
         </div>
@@ -35,8 +35,8 @@ function Dashboard() {
       {weatherData && (
         <div>
           <h2>Current Weather</h2>
-          <p>{weatherData.current.temperature}°F</p>
-          <p>{weatherData.current.conditions}</p>
+          <p>{weatherData.result.temperature}°F</p>
+          <p>{weatherData.result.conditions}</p>
         </div>
       )}
     </div>
@@ -44,5 +44,6 @@ function Dashboard() {
 }
 
 export default Dashboard;
+
 
  
