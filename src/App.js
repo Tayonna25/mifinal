@@ -1,3 +1,9 @@
+import React, { useState, useEffect } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './index.css';
+import './App.css';
+
+
 function Dashboard() {
   const [calendarData, setCalendarData] = useState(null);
   const [weatherData, setWeatherData] = useState(null);
@@ -36,3 +42,4 @@ function Dashboard() {
     </div>
   );
 }
+export default Dashboard;
