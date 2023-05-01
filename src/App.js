@@ -41,3 +41,4 @@ function Dashboard() {
     </div>
   );
 }
+export default App;
