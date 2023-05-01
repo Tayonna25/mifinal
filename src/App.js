@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
-import React from 'react';
-import { Link } from 'react-router-dom';
 import './App.css'; // assuming this is the CSS file for your App component
 
 document.body.style.backgroundColor = 'black';
@@ -14,7 +12,7 @@ function Dashboard() {
 
   useEffect(() => {
     // Fetch calendar data
-    fetch('https://api.calendar.com/events')
+    fetch('GET https://www.googleapis.com/calendar/v3/calendars/calendarId')
       .then(response => response.json())
       .then(data => setCalendarData(data));
 
@@ -48,28 +46,7 @@ function Dashboard() {
   );
 }
 
-function NavBar() {
-  return (
-    <nav>
-      <ul>
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/workouts">Workouts</Link>
-        </li>
-        <li>
-          <Link to="/goals">Goals</Link>
-        </li>
-        <li>
-          <Link to="/meals">Meals</Link>
-        </li>
-      </ul>
-    </nav>
-  );
-}
 
-export default NavBar;
 
 
 export default Dashboard;
