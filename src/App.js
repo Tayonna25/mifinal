@@ -1,4 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.css'; // assuming this is the CSS file for your App component
+
+document.body.style.backgroundColor = 'black';
+
 
 function Dashboard() {
   const [calendarData, setCalendarData] = useState(null);
