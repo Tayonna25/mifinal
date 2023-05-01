@@ -3,6 +3,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 import './App.css'; // assuming this is the CSS file for your App component
 
+
+
 document.body.style.backgroundColor = 'black';
 
 
@@ -17,7 +19,7 @@ function Dashboard() {
       .then(data => setCalendarData(data));
 
     // Fetch weather data
-    fetch('https://api.weather.com/forecast')
+    fetch('"https://api.openuv.io/api/v1/uv?lat=51.5&lng=-0.11&alt=100&dt=')
       .then(response => response.json())
       .then(data => setWeatherData(data));
   }, []);
