@@ -3,23 +3,18 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 import './App.css'; // assuming this is the CSS file for your App component
 
-
-
-document.body.style.backgroundColor = 'black';
-
-
 function Dashboard() {
   const [calendarData, setCalendarData] = useState(null);
   const [weatherData, setWeatherData] = useState(null);
 
   useEffect(() => {
     // Fetch calendar data
-    fetch('GET https://www.googleapis.com/calendar/v3/calendars/calendarId')
+    fetch('/calendars/https://calendar.google.com/calendar/embed?src=botello2%40msu.edu&ctz=America%2FNew_York')
       .then(response => response.json())
       .then(data => setCalendarData(data));
 
     // Fetch weather data
-    fetch('"https://api.openuv.io/api/v1/uv?lat=51.5&lng=-0.11&alt=100&dt=')
+    fetch('https://api.openuv.io/api/v1/uv?lat=51.5&lng=-0.11&alt=100&dt=&apikey=YOUR_openuv-qletsgrlh4tuops-io')
       .then(response => response.json())
       .then(data => setWeatherData(data));
   }, []);
@@ -31,7 +26,7 @@ function Dashboard() {
         <div>
           <h2>Upcoming Events</h2>
           <ul>
-            {calendarData.map(event => (
+            {calendarData.items.map(event => (
               <li key={event.id}>{event.title}</li>
             ))}
           </ul>
@@ -47,9 +42,6 @@ function Dashboard() {
     </div>
   );
 }
-
-
-
 
 export default Dashboard;
 
