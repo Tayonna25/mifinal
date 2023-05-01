@@ -19,14 +19,10 @@ function Dashboard() {
       .then(data => setWeatherData(data));
   }, []);
 
-
-  if (error) {
-    return <div>Error: {error.message}</div>;
-  } 
   return (
     <div>
       <h1>My Fitness Dashboard</h1>
-      {calendarData && (
+      {calendarData && calendarData.items && (
         <div>
           <h2>Upcoming Events</h2>
           <ul>
@@ -45,14 +41,3 @@ function Dashboard() {
     </div>
   );
 }
-
-
-function App() {
-  return (
-    <div className="App">
-      <Dashboard />
-    </div>
-  );
-}
-
-export default App;
