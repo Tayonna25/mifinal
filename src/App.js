@@ -14,7 +14,7 @@ function Dashboard() {
       .then(data => setCalendarData(data));
 
     // Fetch weather data
-    fetch('https://api.openuv.io/api/v1/uv?lat=51.5&lng=-0.11&alt=100&dt=&apikey=YOUR_openuv-apikey')
+    fetch('https://api.openuv.io/api/v1/uv?lat=51.5&lng=-0.11&alt=100&dt=&apikey=openuv-qletsgrlh4tuops-io')
       .then(response => response.json())
       .then(data => setWeatherData(data));
   }, []);
